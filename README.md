@@ -2,9 +2,9 @@
 
 [![Build Status](https://www.travis-ci.com/401-advanced-javascript-merritt/lab-11.svg?branch=master)](https://www.travis-ci.com/401-advanced-javascript-merritt/lab-11)
 
-[Pull Request]()
-[Docs](https://merritt-lab11-fixed.herokuapp.com/docs)
-
+* [Pull Request](https://github.com/401-advanced-javascript-merritt/lab-11/pull/1)
+* [Docs](https://merritt-lab11-fixed.herokuapp.com/docs)
+* [Heroku](https://merritt-lab11-fixed.herokuapp.com/)
 #### Bug fixes:
 
 1. add the app.use(auth) middle ware to app.js
