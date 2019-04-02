@@ -24,6 +24,7 @@ describe('Auth Router', () => {
     
     describe(`${userType} users`, () => {
       
+      // eslint-disable-next-line no-unused-vars
       let encodedToken;
       let id;
       

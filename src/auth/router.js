@@ -5,7 +5,25 @@ const authRouter = express.Router();
 
 const User = require('./users-model.js');
 const auth = require('./middleware.js');
-
+/**
+ * Creates a new route to /signup for the user to create a new username and password.
+ * @param  {} '/signup'
+ * @param  {} (req
+ * @param  {} res
+ * @param  {} next
+ * @param  {} =>{letuser=newUser(req.body
+ * @param  {} ;user.save(
+ * @param  {} .then((user
+ * @param  {} =>{req.token=user.generateToken(
+ * @param  {} ;req.user=user;res.set('token'
+ * @param  {} req.token
+ * @param  {} ;res.cookie('auth'
+ * @param  {} req.token
+ * @param  {} ;res.send(req.token
+ * @param  {} ;}
+ * @param  {} .catch(next
+ * @param  {} ;}
+ */
 authRouter.post('/signup', (req, res, next) => {
   let user = new User(req.body);
   user.save()
@@ -17,8 +35,19 @@ authRouter.post('/signup', (req, res, next) => {
       res.send(req.token);
     }).catch(next);
 });
-
-authRouter.get('/signin', auth, (req, res, next) => {
+/**
+ * Creates a new route to /signin for the user to sign into an existing database value.
+ * @param  {} '/signin'
+ * @param  {} auth
+ * @param  {} (req
+ * @param  {} res
+ * @param  {} next
+ * @param  {} =>{res.cookie('auth'
+ * @param  {} req.token
+ * @param  {} ;res.send(req.token
+ * @param  {} ;}
+ */
+authRouter.post('/signin', auth, (req, res, next) => {
   res.cookie('auth', req.token);
   res.send(req.token);
 });
