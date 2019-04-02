@@ -9,6 +9,7 @@ const morgan = require('morgan');
 const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
 const authRouter = require( './auth/router.js' );
+const bookrouter = require('./routes/books.js');
 
 // Prepare the express app
 const app = express();
@@ -20,12 +21,26 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+app.use('/docs', express.static('docs'));
+app.use(authRouter);
+app.use(bookrouter);
+
 // Catchalls
 app.use(notFound);
 app.use(errorHandler);
 
 let isRunning = false;
-
+/**
+ * Export the start function to index.
+ * @param  {} port
+ * @param  {} =>{if(!isRunning
+ * @param  {} {app.listen(port
+ * @param  {} (
+ * @param  {} =>{isRunning=true;console.log(`ServerUpon${port}`
+ * @param  {} ;}
+ * @param  {} ;}else{console.log('Serverisalreadyrunning'
+ * @param  {} ;}}
+ */
 module.exports = {
   server: app,
   start: (port) => {
